@@ -19,7 +19,7 @@ require 'json'
 
 
 i = 1
-while i < 50
+while i < 100
     plants = RestClient.get("https://trefle.io/api/plants/?page=#{i}&token=ZDlyQXZ2cG1KZktCeEwwWEtrSElOZz09")
     plants_array = JSON.parse(plants)
 
@@ -33,16 +33,13 @@ while i < 50
         scientific_name = plant_hash["scientific_name"]
         common_name = plant_hash["common_name"]
         images = plant_hash["images"]
-        mature_height = plant_hash["main_species"]["specifications"]["mature_height"]
         bloom_period = plant_hash["main_species"]["seed"]["bloom_period"]
         temperature = plant_hash["main_species"]["growth"]["temperature_minimum"]
         watering = plant_hash["main_species"]["growth"]["precipitation_minimum"]
-        leaves = plant_hash["main_species"]["foliage"]["color"]
-        flowers = plant_hash["main_species"]["flower"]["common_name"]
         
 
-        if images.length > 0
-            Plant.find_or_create_by(scientific_name: scientific_name, common_name: common_name, picture: images[0]["url"], mature_height: mature_height["ft"], bloom: bloom_period, temperature: temperature["deg_f"], water: watering["inches"], foliage_color: leaves, flowers: flowers)
+        if images.length > 0 && scientific_name != nil && common_name != nil && bloom_period != nil && temperature != nil && watering != nil
+            Plant.find_or_create_by(scientific_name: scientific_name, common_name: common_name, picture: images[0]["url"], bloom: bloom_period, temperature: temperature["deg_f"], water: watering["inches"])
     
         end
 
@@ -52,8 +49,8 @@ while i < 50
 end
 
 
-20.times do
-    User.create()
+# 20.times do
+#     Garden.create(name: )
 
 # binding.pry
 # 0 

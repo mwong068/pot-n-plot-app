@@ -1,0 +1,7 @@
+<h1>Welcome to <%= @garden.name %>!</h1>
+
+<h2>Created by:<%= @garden.user %></h2>
+
+<% @garden.plants.each do |plant| %>
+    <img src="<%= plant.picture %>" height="200" width="200" %>
+<% end %>
