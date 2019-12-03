@@ -1,7 +1,7 @@
-<h1>Beautiful Plants of the World:</h1>
-<div>
+<h1>Plants of the World!</h1>
 <ul>
-<% @plants.each do |plant| %>
-<li><%= link_to plant.scientific_name, plant_path(plant) %></li><br>
-</ul>
+<% plants = @plants.sort{|a, b| a.common_name <=> b.common_name} %>
+<% plants.each do |plant| %>
+    <li><%= link_to plant.common_name, plant_path(plant) %></li>
 <% end %>
+</ul>

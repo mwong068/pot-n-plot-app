@@ -1,31 +1,20 @@
-<h1><%=@plant.scientiffic_name %></h1><br>
-<tdiv>
-<h3> Common Name:</h3><br>
-<h3><%=@plant.common_name %></h3><br>
+<img src="<%=@plant.picture%>" height="250" width="250" />
 
-<div>
-<h3> Grows until:</h3><br>
-<h3><%=@plant.mature_height %> ft.</h3><br>
+<h1>Common Name:</h1>
+<h1><%=@plant.common_name %></h1><br>
 
-<div>
-<h3> Bloom Period:</h3><br>
+<h3>Scientific Name:</h3>
+<h3><%=@plant.scientific_name %></h3><br>
+
+<h3> Bloom Period:</h3>
 <h3><%=@plant.bloom %></h3><br>
 
-<div>
-<h3> Minimum Temperature for Growth:</h3><br>
-<h3><%=@plant.temperature %> Farenheight</h3><br>
+<h3> Minimum Temperature for Growth:</h3>
+<h3><%=@plant.temperature %>°F</h3><br>
 
-<div>
-<h3> Watering Schedule:</h3><br>
-<h3><%=@plant.water %></h3><br>
+<h3> Watering Schedule:</h3>
+<h3><%=@plant.water %> inches per year</h3><br>
 
-<div>
-<h3> Leaf Color:</h3><br>
-<h3><%=@plant.foliage_color %></h3><br>
 
-<div>
-<h3> Flower Name:</h3><br>
-<h3><%=@plant.flowers%></h3><br>
 
-<div>
-<img src= "<%=@plant.picture%>" height="10" width="10">
+
