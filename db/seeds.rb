@@ -12,4 +12,45 @@
     #      Plant.find_or_create_by(name: plant["title"], recipe_arr: plant["ingredients"])
 # end
 
+require 'rest-client'
+require 'json'
+require 'pry'
+# i = 1
+# plant_hash = {}
+# 7.times do 
+    # plants = RestClient.get("https://trefle.io/api/plants/?page=#{i}&token=ZDlyQXZ2cG1KZktCeEwwWEtrSElOZz09")
+    # plants_array = JSON.parse(plants)
+    
+
+    # all_plants = plants_array.map do |plant|
+    #     link_id = plant["id"]
+    #     plant_hash = {link_id: link_id}
+    #    end 
+    
+
+    # plant_info = all_plants.map do |id|
+    #     foliage = RestClient.get("https://trefle.io/api/plants/#{id[:link_id]}?token=ZDlyQXZ2cG1KZktCeEwwWEtrSElOZz09")
+    #     foliage_hash = JSON.parse(foliage)
+        
+    #     end 
+
+    # plant_info. map do |element|
+
+
+    # i += 1
+# end 
+
+#     all_plants.each do |plant| 
+#                Plant.create(plant)
+#             end 
+#             sleep(3)
+       
+# end 
+plants = RestClient.get("https://trefle.io/api/plants/157790?token=ZDlyQXZ2cG1KZktCeEwwWEtrSElOZz09")
+plant_hash = JSON.parse(plants)
+
+
+binding.pry
+0 
+
 
