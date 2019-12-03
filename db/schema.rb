@@ -27,7 +27,15 @@ ActiveRecord::Schema.define(version: 2019_12_02_212554) do
   end
 
   create_table "plants", force: :cascade do |t|
-    t.string "name"
+    t.string "scientific_name"
+    t.string "common_name"
+    t.string "picture"
+    t.integer "mature_height"
+    t.string "bloom"
+    t.integer "temperature"
+    t.integer "water"
+    t.string "foliage_color"
+    t.string "flowers"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
