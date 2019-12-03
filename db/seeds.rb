@@ -52,6 +52,8 @@ while i < 50
 end
 
 
+20.times do
+    User.create()
 
 # binding.pry
 # 0 
