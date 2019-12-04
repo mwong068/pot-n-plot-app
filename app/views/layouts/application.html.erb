@@ -60,7 +60,7 @@
 
       <li class="nav-item">
       <% if logged_in? %>
-        <%= link_to "Logout", sessions_path, :method => :destroy, :class => "nav-link"%>
+        <%= link_to "Logout", "/sessions",  method: :delete, :class => "nav-link"%>
       <% end %>
       </li>
     </ul>
@@ -82,13 +82,17 @@
 
   
 
-    <!-- Will's original script
+    <!--
+    Will's original script
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"></script>
     -->
-
+    
+    
+    
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
 
   </body>
 </html>

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post '/signup' => 'users#create'
   get '/login' => 'sessions#new'
   post '/sessions' => 'sessions#create'
-  post '/logout' => 'sessions#destroy'
+  get '/sessions' => 'sessions#destroy'
+  delete '/sessions' => 'sessions#destroy'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
