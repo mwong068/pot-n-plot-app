@@ -7,9 +7,11 @@
 <br><br>
 <% if current_user == @user %>
 <h3><u><%=@user.first_name%>'s Gardens</u></h3>
+<ul>
 <% @user.gardens.each do |garden| %>
-    <%= link_to garden.name, garden_path(garden) %>
+    <li><%= link_to garden.name, garden_path(garden) %></li>
 <% end %>
+</ul>
 <br><br>
 <br>
 <%= button_to "Edit", edit_user_path(@user), method: :get %><br>
