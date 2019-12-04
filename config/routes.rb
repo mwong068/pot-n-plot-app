@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :plants, only: [:index, :show]
   resources :gardens
   resources :users, only: [:new, :edit, :show, :create, :destroy, :update]
+  resources :garden_plants, only: [:create]
 
 
   root 'application#index'

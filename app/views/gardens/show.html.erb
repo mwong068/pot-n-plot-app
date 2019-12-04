@@ -8,6 +8,6 @@
 <h2>Created by: <%= link_to @garden.user.full_name, user_path(@garden.user) %></h2>
 <br><br><br><br><br><br><br><br><br><br><br><br><br>
 <% @garden.plants.each do |plant| %>
-    <img src="<%= plant.picture %>" height="150" width="150" %>
+    <a href="/plants/<%=plant.id %>"><img src="<%= plant.picture %>" height="150" width="150" %></a>
 <% end %>
 </div>

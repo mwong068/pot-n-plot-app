@@ -17,18 +17,18 @@
 
 <br>
 <% if logged_in? %>
-    <% current_user.gardens.each do |garden| %>
-        <%= form_for garden do |g| %>
-            <h2>Like this plant? Add it to your Garden!</h2>
-            Choose which of your <%= g.label :gardens_to_add %> to:<br>
-            <%= g.collection_select :user_id, current_user.gardens, :id, :name %>
-            <br><br>
-            <%= g.submit "Add to Garden" %>
-        <% end %>
+    <%= form_for @garden_plant do |g| %>
+        <h2>Like this plant? Add it to your Garden!</h2>
+        Choose which of your <%= g.label :gardens_to_add %> to:<br>
+        <%= g.collection_select :garden_id, current_user.gardens, :id, :name %>
+        <%= g.hidden_field :plant_id, { :value => @plant.id } %>
+        <br><br>
+        <%= g.submit "Add to Garden" %>
     <% end %>
-    <br>
-    <br>
 <% end %>
+<br>
+<br>
+
 
 
 
