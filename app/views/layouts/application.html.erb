@@ -5,11 +5,90 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">
+    <img src="/pot-n-plot.png" width="170" height="50"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+    <% if logged_in? %>
+      <li class="nav-item">
+        <a class="nav-link" href="/users/<%=current_user.id%>">Profile</a>
+      <% else %> 
+        <a class="nav-link" href="/">Home</a>
+      <% end %>
+      </li>
+      
+      <!-- 
+      <li class="nav-item active">
+      <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+      </li> -->
+
+      <li class="nav-item">
+        <a class="nav-link" href="/plants">Plants</a>
+      </li>
+  
+      <% if logged_in? %>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/gardens" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Gardens
+        </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <% current_user.gardens.each do |garden| %>
+            <a class="dropdown-item" href="/gardens/<%=garden.id%>"><%=garden.name%></a>
+            <% end %>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/gardens/new">Create</a>
+            <a class="dropdown-item" href="/gardens/add">Add Plants</a>
+          </div>
+        <% else %>
+          <a class="nav-link disabled" href="#">Gardens</a>
+        <% end %>
+      </li>
+
+      <li class="nav-item">
+      <% if logged_in? %>
+        <%= link_to "Logout", sessions_path, :method => :destroy, :class => "nav-link"%>
+      <% end %>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<br>
+<center>
+
     <%= yield %>
+
+
+   
+   
+
+  
+
+    <!-- Will's original script
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"></script>
+    -->
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
   </body>
 </html>

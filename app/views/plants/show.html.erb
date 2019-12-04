@@ -15,8 +15,19 @@
 <h3> Watering Schedule:</h3>
 <h3><%=@plant.water %> inches per year</h3><br>
 
-<% if current_user == @user %>
-    hi there
+<br>
+<% if logged_in? %>
+    <% current_user.gardens.each do |garden| %>
+        <%= form_for garden do |g| %>
+            <h2>Like this plant? Add it to your Garden!</h2>
+            Choose which of your <%= g.label :gardens_to_add %> to:<br>
+            <%= g.collection_select :user_id, current_user.gardens, :id, :name %>
+            <br><br>
+            <%= g.submit "Add to Garden" %>
+        <% end %>
+    <% end %>
+    <br>
+    <br>
 <% end %>
 
 

@@ -1,15 +1,17 @@
-<h1>Welcome <%=@user.full_name %></h1>
-<h4>About Me!</h4>
-<p><%= @user.bio%></p>
+<h1>Welcome <%=@user.full_name %>!</h1><br><br>
 
+<h3><u>About Me</u></h3>
+
+<h5><%= @user.bio%></h5>
+
+<br><br>
 <% if current_user == @user %>
-<h2>Your gardens</h2>
+<h3><u><%=@user.first_name%>'s Gardens</u></h3>
 <% @user.gardens.each do |garden| %>
     <%= link_to garden.name, garden_path(garden) %>
 <% end %>
+<br><br>
 <br>
-<br>
-<%= button_to "Edit", edit_user_path(@user), method: :get %>
+<%= button_to "Edit", edit_user_path(@user), method: :get %><br>
 <%= button_to "Delete", user_path(@user), method: :delete %>
-<%= button_to "Logout", logout_path, method: :post %>
 <% end %>

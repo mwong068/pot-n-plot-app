@@ -1,5 +1,5 @@
 class GardensController < ApplicationController
-    before_action :find_garden, only: [:show, :edit, :destroy]
+    before_action :find_garden, only: [:show, :edit, :update, :destroy]
     def index
         @gardens = Garden.all
     end
@@ -21,6 +21,11 @@ class GardensController < ApplicationController
     end
 
     def edit
+
+    end
+
+    def update
+        byebug
         @garden.update(garden_params)
         redirect_to garden_path(@garden)
     end

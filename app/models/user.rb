@@ -7,6 +7,9 @@ class User < ApplicationRecord
     validates :bio, presence: true
     validates :password, presence: true
 
-   
+    def first_name
+        name_array = self.full_name.split(" ")
+        first_name = name_array[0]
+    end
     
 end

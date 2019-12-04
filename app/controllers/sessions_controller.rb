@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id 
       redirect_to @user
     else 
-      flash[:errors] = @user.errors.full_messages
+      flash[:error] = "Invalid username or password. Please try again."
       redirect_to login_path
     end 
   end

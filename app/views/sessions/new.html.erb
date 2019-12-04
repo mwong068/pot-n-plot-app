@@ -1,6 +1,10 @@
-<% if flash[:errors] %>
-<h3><%= flash[:errors] %></h3>
+<br>
+
+<% if flash[:error] %>
+    <h4><%= flash[:error]%></h4>
 <% end %>
+
+<br><br>
 
 <h1>Login</h1>
 <%= form_tag sessions_path do %>
@@ -14,3 +18,4 @@
     <br>
     <%= submit_tag "Log In" %>
     <% end %>
+
