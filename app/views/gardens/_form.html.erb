@@ -3,8 +3,5 @@
     <%= g.label :name %>
     <%= g.text_field :name %><br>
 
-    <%= g.label :user %>
-    <%= g.collection_select :user_id, User.all, :id, :name %><br>
-
     <%= g.submit button_text %>
 <% end %>

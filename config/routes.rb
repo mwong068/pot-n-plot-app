@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  # get 'sessions/new'
+
   resources :plants, only: [:index, :show]
   resources :gardens
-  resources :users, only: [:new, :edit, :show, :create, :destroy]
+  resources :users, only: [:new, :edit, :show, :create, :destroy, :update]
 
-  # root 'application#hello'
+
+  root 'application#index'
   get '/signup' => 'users#new', as: "signup"
   post '/signup' => 'users#create'
   get '/login' => 'sessions#new'

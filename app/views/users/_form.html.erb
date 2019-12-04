@@ -1,6 +1,9 @@
 <% if flash[:error] %>
-<h3><%= flash[:error]%></h3>
+<% flash[:error].each do |error|%>
+    <h3><%= error %></h3>
+    <% end %>
 <% end %>
+
 <%= form_for @user do |f| %>
     <%= f.label :Name %><br>
     <%= f.text_field :full_name, placeholder: "First & Last Name" %><br> 

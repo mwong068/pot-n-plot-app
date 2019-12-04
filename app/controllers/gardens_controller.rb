@@ -6,14 +6,18 @@ class GardensController < ApplicationController
 
     def new
         @garden = Garden.new
+        
     end
 
     def create
-        @garden = Garden.create(garden_params)
+        @garden = Garden.new(garden_params)
+        @garden.user_id = current_user.id
+        @garden.save
         redirect_to garden_path(@garden)
     end
     
     def show
+
     end
 
     def edit
@@ -29,11 +33,11 @@ class GardensController < ApplicationController
     private
 
     def find_garden
-        @garden = garden.find(params[:id])
+        @garden = Garden.find(params[:id])
     end
 
     def garden_params
-        params.require(:garden).permits(:name, :user_id)
+        params.require(:garden).permit(:name, :user_id)
     end
 
 end

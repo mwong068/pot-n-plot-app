@@ -38,10 +38,10 @@ ActiveRecord::Schema.define(version: 2019_12_02_212554) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "full_name"
     t.string "username"
     t.string "password_digest"
     t.string "bio"
-    t.string "full_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
