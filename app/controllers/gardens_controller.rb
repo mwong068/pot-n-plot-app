@@ -21,7 +21,10 @@ class GardensController < ApplicationController
     end
     
     def show
-
+        @params = params[:water]
+       
+       
+       
     end
 
     def edit
