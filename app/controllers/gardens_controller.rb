@@ -1,12 +1,16 @@
 class GardensController < ApplicationController
+    before_action :logged_in?
     before_action :find_garden, only: [:show, :edit, :update, :destroy]
+    before_action :authorized, only: [:edit, :update, :destroy]
+    helper_method :authorized
+
     def index
         @gardens = Garden.all
     end
 
     def new
         @garden = Garden.new
-        
+      
     end
 
     def create
@@ -21,11 +25,11 @@ class GardensController < ApplicationController
     end
 
     def edit
-
+        @plants = Plant.all
     end
 
     def update
-        byebug
+       
         @garden.update(garden_params)
         redirect_to garden_path(@garden)
     end
@@ -44,5 +48,11 @@ class GardensController < ApplicationController
     def garden_params
         params.require(:garden).permit(:name, :user_id)
     end
+
+    def authorized
+       logged_in? && @garden.user_id == current_user.id
+    end 
+
+    
 
 end

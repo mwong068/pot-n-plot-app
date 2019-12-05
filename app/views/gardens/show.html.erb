@@ -10,4 +10,12 @@
 <% @garden.plants.each do |plant| %>
     <a href="/plants/<%=plant.id %>"><img src="<%= plant.picture %>" height="150" width="150" %></a>
 <% end %>
+<br><br>
+<% if authorized %>
+<%= button_to "Add a Plant", plants_path, method: :get %><br>
+<%= button_to "Edit", edit_garden_path(@garden), method: :get %><br>
+
+<% end %>
 </div>
+
+
