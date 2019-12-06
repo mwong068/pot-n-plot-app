@@ -1,3 +1,30 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+// .user_index { 
+//     column-count: 3;
+//     column-gap: 2.5em;
+//     column-width: 300px;
+//     display: block;
+//     
+//     
+// }
+
+.button {
+    border-radius: 12px;
+}
+
+.column {
+    float: left;
+    width: 28.33%;
+    margin: 0px 0px 0px 70px;
+  }
+  
+  /* Clear floats after the columns */
+  .user_index:after {
+    content: "";
+    display: table;
+    clear: both;
+    
+  }

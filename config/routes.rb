@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :gardens
   resources :users, only: [:new, :edit, :show, :create, :destroy, :update]
   resources :garden_plants, only: [:create]
+  resources :friendships, only: [ :create, :new, :destroy]
 
 
   root 'application#index'

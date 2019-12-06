@@ -1,19 +1,64 @@
 <h1>Welcome <%=@user.full_name %>!</h1><br><br>
 
+<div class="user_index">
+
+ <div class="column">
 <h3><u>About Me</u></h3>
 
-<h5><%= @user.bio%></h5>
-
-<br><br>
+<p><%= @user.bio%></p>
+<br>
 <% if current_user == @user %>
+<%= button_to "Edit Profile", edit_user_path(@user), method: :get, class: :button %><br>
+<%= button_to "Delete Profile", user_path(@user), method: :delete, class: :button %>
+<% end %>
+</div>
+
+
+ <div class="column">
+<% if logged_in? %>
 <h3><u><%=@user.first_name%>'s Gardens</u></h3>
 <ul>
 <% @user.gardens.each do |garden| %>
     <li><%= link_to garden.name, garden_path(garden) %></li>
 <% end %>
 </ul>
-<br><br>
-<br>
-<%= button_to "Edit", edit_user_path(@user), method: :get %><br>
-<%= button_to "Delete", user_path(@user), method: :delete %>
 <% end %>
+</div>
+
+<div class="column">
+<% if current_user == @user %>
+<h3><u>My Friends</u></h3>
+<% @user.friends.each do |friend| %>
+<%= link_to friend.full_name, user_path(friend) %><br>
+<% end %><br><br>
+<% else %>
+<h3><u><%= @user.full_name %>'s Friends</u></h3>
+<% @user.friends.each do |friend| %>
+<%= link_to friend.full_name, user_path(friend) %><br>
+<% end %>
+<br><br>
+<% end %>
+
+
+
+<% if current_user == @user %>
+<h3>Add a Friend</h3>
+<p>(You can only friend everyone once!)</p>
+<%= form_tag(friendships_path, method: "post") do %>
+  <%= collection_select(:user, :friend_ids, User.where.not(id: current_user.id), :id, :full_name)%><br>
+  <%= submit_tag("Add", class: "button")%>
+<%end%>
+<br>
+<% end %>
+
+<% if current_user == @user %>
+<h3>Delete a Friend</h3>
+<%= form_tag(friendship_path, method: "delete") do %>
+  <%= collection_select(:user, :friend_ids, current_user.friends, :id, :full_name)%><br>
+  <%= submit_tag("Delete", class: "button")%>
+<% end %>
+<br>
+<% end %>
+</div>
+</div>
+
