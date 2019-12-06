@@ -28,6 +28,9 @@
 
 </section>
 <section id="view">
+<%if flash[:errors]%>
+<h3><%=flash[:errors][0]%></h3>
+<%end%>
 <div class="watering_can">
 <% if @params == "true" %>
 <img src= "/watering-can.gif">
