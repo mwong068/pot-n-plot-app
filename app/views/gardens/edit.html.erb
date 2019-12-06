@@ -1,6 +1,16 @@
 <center>
 <h1>Edit a Garden!</h1>
+<br>
+<%= render partial: "form", locals: {button_text: "Change Name"} %><br>
+<br>
 
-<%= render partial: "form", locals: {button_text: "Submit Updates"} %><br>
+<p>Remove a Plant?</p>
+<%= form_tag(garden_plant_path, method: "delete") do %>
+  <%= collection_select(:garden_plant, :plant_id, @garden.plants, :id, :common_name)%><br><br>
+  <%= submit_tag("Throw Away :(", class: "button")%>
+<% end %>
+
+<br><br>
+
 <%= button_to "Add a Plant", plants_path, method: :get %><br>
 <%= button_to "Delete Garden", @garden, method: :delete %>

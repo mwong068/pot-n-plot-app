@@ -21,6 +21,7 @@ section {
    min-width: 250px;
    position: relative;
    margin-right: 0;
+   padding-left: 2%;
 
 }
 
@@ -65,7 +66,7 @@ font-family: 'Lobster Two', cursive;
     grid-template-rows: 33% 33% 33%;
     position: absolute;
     align-content: end;
-    margin-top: 150px;
+    margin-top: -150px;
     width: 47vw;
     height: 27vw;
 }
@@ -79,7 +80,8 @@ font-family: 'Lobster Two', cursive;
 }
 
 .watering_can {
-    margin-bottom: 25px;
+    margin-bottom: 252px;
+    margin-left: 30px;
     height: 9vw;
     width: 9vw;
 }
@@ -94,8 +96,10 @@ font-family: 'Lobster Two', cursive;
     box-sizing: border-box;
 }
 
-.plot img { 
-    height: 7vw; 
+.plot img {
+    height: 7vw;
     width: 7vw;
+    margin-left: 25%;
+    margin-top: 6%;
 }
 
