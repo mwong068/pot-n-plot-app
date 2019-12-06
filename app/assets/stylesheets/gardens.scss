@@ -1,8 +1,101 @@
 // Place all the styles related to the Gardens controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-#garden{
-    display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
-    grid-template-rows: 20% 20% 20% 20% 20%;
+
+
+  body .img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0.6;
   }
+section {
+    display: block;
+}
+
+#sidebar {
+    float: left;
+   width: 50%;
+   min-width: 250px;
+   position: relative;
+   margin-right: 0;
+
+}
+
+#view {
+    
+    float: right;
+    width: 50%;
+    
+}
+
+
+
+.title {
+width: 250px;
+padding: 5px;
+font-size: 30px;
+font-family: 'Lobster Two', cursive;
+}
+
+.created_by {
+    width: 250px;
+    padding: 10px;
+    font-size: 25px;
+    font-family: 'Lobster Two', cursive;
+}
+
+
+.button {
+    padding: 15px;
+    
+}
+
+.button_to input {
+    border-radius: 15px;
+}
+
+#garden {
+    // margin: 0;
+    
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 33%;
+    position: absolute;
+    align-content: end;
+    margin-top: 150px;
+    width: 47vw;
+    height: 27vw;
+}
+
+.plot {
+    // width: 30vw;
+    // height: 30vw;
+
+    position: relative;
+    background-color: #665235;
+}
+
+.watering_can {
+    margin-bottom: 25px;
+    height: 9vw;
+    width: 9vw;
+}
+
+#garden .plot {
+   
+   
+    box-shadow: inset 2px 2px 0 rgba(255, 255, 255, 0.05), inset -2px -2px 0 #665235;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.plot img { 
+    height: 7vw; 
+    width: 7vw;
+}
+
