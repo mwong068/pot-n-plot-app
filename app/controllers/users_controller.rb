@@ -38,7 +38,7 @@ class UsersController < ApplicationController
 
     def destroy
         @user.delete
-        redirect_to signup_path
+        redirect_to "/logout"
     end
 
     private 

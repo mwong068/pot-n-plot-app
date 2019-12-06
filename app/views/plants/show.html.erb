@@ -1,5 +1,5 @@
 <img src="<%=@plant.picture%>" height="250" width="250" />
-
+<br><br>
 <h1>Common Name:</h1>
 <h1><%=@plant.common_name %></h1><br>
 
@@ -16,7 +16,7 @@
 <h3><%=@plant.water %> inches per year</h3><br>
 
 <br>
-<% if logged_in? %>
+<% if logged_in? && current_user.gardens.length > 0 %>
     <%= form_for @garden_plant do |g| %>
         <h2>Like this plant? Add it to your Garden!</h2>
         Choose which of your <%= g.label :gardens_to_add %> to:<br>

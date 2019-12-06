@@ -1,8 +1,10 @@
 <br><h1>Plants of the World!</h1><br>
 
-<ul>
+
+<ul class="plant_index">
 <% plants = @plants.sort{|a, b| a.common_name <=> b.common_name} %>
 <% plants.each do |plant| %>
-    <li><%= link_to plant.common_name, plant_path(plant) %></li>
+    <li class="plant_index"><%= link_to plant.common_name, plant_path(plant) %></li>
 <% end %>
 </ul>
+
