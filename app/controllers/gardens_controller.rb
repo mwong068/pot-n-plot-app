@@ -22,9 +22,10 @@ class GardensController < ApplicationController
     
     def show
         @params = params[:water]
-       
-       
-       
+        @plants = @garden.plants
+        @plant_count = @garden.plants.length
+        @leftover_plot = 9 - @plant_count
+        
     end
 
     def edit

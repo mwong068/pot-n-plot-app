@@ -1,36 +1,57 @@
 
-<div style="background-image: url('/backyard.png'); height:175vh; width:100vw; background-repeat: no-repeat; background-size: 100% 100%">
-<br>
-<h1>Welcome to <%= @garden.name %>!</h1>
-
-
-
-<h2>Created by: <%= link_to @garden.user.full_name, user_path(@garden.user) %></h2>
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
-<% if @params == "true" %>
-<img src= "/watering-can.gif">
-<% end %><br>
-
-
-
-<% @garden.plants.each do |plant| %>
-    <a href="/plants/<%=plant.id %>"><img src="<%= plant.picture %>" height="150" width="150" %></a>
-<% end %>
-<br><br>
-
+<section id="sidebar">
+<div class="title">
+<h1>Welcome to:</h1> <h2><%= @garden.name %>!</h2>
+</div><br>
+<div class= "created_by">
+<h1>Created by:</h1> <h2><%= link_to @garden.user.full_name, user_path(@garden.user) %></h2><br>
+</div>
+<div class="title">
+<h3>Tend to your garden:</h3>
+</div>
+<div class= "button">
 <% if @params == nil%>
-<%= button_to "Water Plants", garden_path(@garden), method: :get, params: {water: true} %>
+<%= button_to "Water Plants", garden_path(@garden), method: :get, params: {water: true} %><br>
 <% elsif @params == "false"%>
-<%= button_to "Water Plants", garden_path(@garden), method: :get, params: {water: true} %>
+<%= button_to "Water Plants", garden_path(@garden), method: :get, params: {water: true} %><br>
 <% else @params == "true" %>
-<%= button_to "Finish Watering", garden_path(@garden), method: :get, params: {water: false} %>
+<%= button_to "Finish Watering", garden_path(@garden), method: :get, params: {water: false} %><br>
 <%end%>
 
 
 <% if authorized %>
-<%= button_to "Add a Plant", plants_path, method: :get %>
-<%= button_to "Edit", edit_garden_path(@garden), method: :get %>
+<%= button_to "Add a Plant", plants_path, method: :get %><br>
+<%= button_to "Edit", edit_garden_path(@garden), method: :get %><br>
 <% end %>
 </div>
 
+
+</section>
+<section id="view">
+<div class="watering_can">
+<% if @params == "true" %>
+<img src= "/watering-can.gif">
+<% end %>
+</div><br>
+    <div id="garden">
+     <% i = 0%>
+     <% while i < @plant_count do%>
+
+     <% plant = @plants[i] %>
+        
+     <div class="plot"><a href="/plants/<%=plant.id%>"><img src="<%=plant.picture_alias %>"></a>
+     </div>
+     <% i +=1 %>
+    <% end %>
+    <% i = 0%>
+    <% while i < @leftover_plot do %>
+    <div class="plot"></div>
+    <% i += 1%>
+    <% end%>
+
+    </div>
+
+    
+
+</section> 
 
