@@ -1,4 +1,5 @@
 <h1>Edit a Garden!</h1>
 
-<%= render partial: "form", locals: {button_text: "Edit Garden"} %>
-<%= button_to "Delete Garden", @garden, method: :delete) %>
+<%= render partial: "form", locals: {button_text: "Submit Updates"} %><br>
+<%= button_to "Add a Plant", plants_path, method: :get %><br>
+<%= button_to "Delete Garden", @garden, method: :delete %>

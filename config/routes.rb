@@ -14,5 +14,7 @@ Rails.application.routes.draw do
   post '/sessions' => 'sessions#create'
   get '/logout' => 'sessions#destroy' 
   delete '/sessions' => 'sessions#destroy'
+  # get '/gardens/:id?water', to: 'gardens#show', as: "water"
+  # post '/gardens/:id?water', to: 'gardens#show', as: "water"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
