@@ -15,7 +15,9 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
+    @user = User.find_by(username: params[:username])
+    @user = nil
+    reset_session
     redirect_to '/'
   end
 

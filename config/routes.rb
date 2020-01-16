@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   post '/signup' => 'users#create'
   get '/login' => 'sessions#new'
   post '/sessions' => 'sessions#create'
-  get '/' => 'sessions#destroy' 
+  get '/logout' => 'sessions#destroy' 
   delete '/sessions' => 'sessions#destroy'
   # get '/gardens/:id?water', to: 'gardens#show', as: "water"
   # post '/gardens/:id?water', to: 'gardens#show', as: "water"
