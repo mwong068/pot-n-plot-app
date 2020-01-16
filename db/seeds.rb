@@ -19,7 +19,7 @@ require 'json'
 plant_img_alias_array = ['/christmastree.png', '/cuteplant.png', '/daisy.png', '/daisypot.png', '/happycactus.png', '/happyplant.png', '/roses.png', '/sharpplant.png', '/tree.png']
        
 
-i = 0
+i = 1
 while i < 20
     plants = RestClient.get("https://trefle.io/api/plants/?page=#{i}&token=ZDlyQXZ2cG1KZktCeEwwWEtrSElOZz09")
     plants_array = JSON.parse(plants)
