@@ -19,8 +19,8 @@ require 'json'
 plant_img_alias_array = ['/christmastree.png', '/cuteplant.png', '/daisy.png', '/daisypot.png', '/happycactus.png', '/happyplant.png', '/roses.png', '/sharpplant.png', '/tree.png']
        
 
-# i = 1
-# while i < 100
+# i = 21
+# while i < 40
 #     plants = RestClient.get("https://trefle.io/api/plants/?page=#{i}&token=ZDlyQXZ2cG1KZktCeEwwWEtrSElOZz09")
 #     plants_array = JSON.parse(plants)
 
@@ -45,12 +45,12 @@ plant_img_alias_array = ['/christmastree.png', '/cuteplant.png', '/daisy.png', '
 #         end
 
 #        end 
-#        sleep(3)
+       
 #     i += 1
 # end
 
 Plant.all.each do |plant|
-    plant.picture_alias=(plant_img_alias_array.all.sample)
+    plant.update(picture_alias: plant_img_alias_array.sample)
 end 
 
 # 20.times do
