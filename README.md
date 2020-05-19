@@ -8,6 +8,7 @@
 
 A virtual gardening site made entirely using Rails as a database and front end display. It is a full CRUD application built using the MVC architecture, Bootstrap for styling, and seeded with data from the Trefle API.
 
+
 ## Live Preview
 
 [Pot N' Plot](http://pot-n-plot.herokuapp.com/)
@@ -96,8 +97,8 @@ After the server is running, you will be able to successfully create your own ga
 
 ## Contributors
 
-[Daniel Wilder](https://github.com/dauncy)
-[Megan Wong](https://github.com/mwong068)
+- [Daniel Wilder](https://github.com/dauncy)
+- [Megan Wong](https://github.com/mwong068)
 
 
 ## Disclaimer
