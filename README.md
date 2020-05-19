@@ -1,8 +1,8 @@
 # Pot N' Plot
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/mwong068/pot-n-plot-app)
-![GitHub stars](https://img.shields.io/github/stars/mwong068/mwong068/pot-n-plot-app)
-![GitHub forks](https://img.shields.io/github/forks/mwong068/mwong068/pot-n-plot-app)
+![GitHub stars](https://img.shields.io/github/stars/mwong068/pot-n-plot-app)
+![GitHub forks](https://img.shields.io/github/forks/mwong068/pot-n-plot-app)
 
 ## About
 
