@@ -11,7 +11,7 @@ A virtual gardening site made entirely using Rails as a database and front end d
 
 ## Live Preview
 
-[Pot N' Plot](http://pot-n-plot.herokuapp.com/)
+- [Pot N' Plot](http://pot-n-plot.herokuapp.com/)
 
 
 ### How it works
